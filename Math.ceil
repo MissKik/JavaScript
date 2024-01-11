@@ -1,0 +1,36 @@
+//Math.ceil(x) -> retorna o menor número inteiro maior ou igual a "x".
+
+const prompt = require("prompt-sync")();
+
+const barras = [7, 8, 9, 1, 6, 2, 7, 3, 1, 4, 0, 5];
+
+let imparesSum = 0;
+let paresSum = 0;
+let result = 0;
+let total = 0
+let dv = 0;
+let multiplo = 0;
+
+for (let i = 0; i < barras.length; i++) {
+    if (i % 2 === 0) {  
+        imparesSum = imparesSum + barras[i];
+    } else {  
+        paresSum = paresSum + barras[i];
+    }
+}
+
+//---------------------------------
+
+paresSum = paresSum * 3;
+result = paresSum + imparesSum;
+total = result / 10;
+
+multiplo = Math.ceil(total) * 10;
+
+dv = multiplo - result;
+
+if (dv === 10) {
+    dv = 0;
+}
+
+console.log("O dígito verificador é", dv);
