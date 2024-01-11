@@ -1,0 +1,153 @@
+//Paradigma:
+//jeito de fazer alguma coisa, como um fluxograma
+
+class pessoa {
+    constructor (nome, idade, cidade){
+        this.nome = nome;
+        this.idade = idade
+        this.cidade = cidade
+    }
+    apresentar() {
+      console.log(`Olá, meu nome é ${this.nome} e eu tenho ${this.idade} anos e moro em ${this.cidade}.`);
+    }
+  };
+
+  const pessoa1 = new pessoa(`João`, 20, `São Paulo`);
+  pessoa1.apresentar();
+  const pessoa2 = new pessoa(`Vitória`, 17, `São Paulo`);
+  pessoa1.apresentar();
+  const pessoa3 = new pessoa(`Dara`, 16, `São Paulo`);
+  pessoa1.apresentar();
+
+  //----------------------------------
+
+
+  class conta_bancaria {
+    constructor (titular){
+        this.titular = titular;
+        this.saldo = 0;
+    }
+    depositar(valor){
+        this.saldo += 0;
+        console.log(`Depósito de ${valor} realizado. Novo saldo: ${this.saldo}`)
+    }
+    sacar(valor){
+        if (valor <= this.saldo){
+            this.saldo -= valor;
+            console.log(`Saque de ${valor} realizado. Novo saldo: ${this.saldo}`)
+        } else {
+            console.log(`Saldo Insuficiente`)
+        }
+    }
+  };
+
+  const conta1 = new conta_bancaria(`Vitória`);
+  conta1.depositar(1000);
+
+  //----------------------------------
+
+
+  class jogode_palavras {
+    constructor (p1, p2, p3){
+        this.p1 = p1;
+        this.p2 = p2;
+        this.p3 = p3;
+    }
+    apresentar() {
+      console.log(`A primeira palavra é ${this.nome}, a segunda é ${this.idade} a terceira palavra é ${this.cidade}.`);
+    }
+  };
+
+  const palavras = new pessoa(`João`, 20, `São Paulo`);
+  palavras.apresentar();
+
+//----------------------------------
+
+
+class alunoifsp {
+    constructor (nome, prontuario, email){
+        this.nome = nome;
+        this.prontuario = prontuario
+        this.email = email
+    }
+    apresentar() {
+      console.log(`O nome do aluno é ${this.nome}, seu prontuário é ${this.prontuario} e seu email institucional é ${this.email}.`);
+    }
+  };
+
+  const aluno1 = new pessoa(`Vitória`, `SL3032175`, `perdomo.n@aluno.ifsp.edu.br`);
+  aluno1.apresentar();
+
+  const aluno2 = new pessoa(`Dara`, `SL3033341
+  `, `dara.v@aluno.ifsp.edu.br`);
+  aluno2.apresentar();
+
+  const aluno3 = new pessoa(`Raiane`, `SL3031217`, `santos.raiane@aluno.ifsp.edu.br`);
+  aluno3.apresentar();
+
+  //----------------------------------
+
+
+  class professorifsp {
+    constructor (nome, prontuario, email, aula){
+        this.nome = nome;
+        this.prontuario = prontuario
+        this.email = email
+        this.aula = aula
+    }
+    apresentar() {
+      console.log(`O nome do professor é ${this.nome}, seu prontuário é ${this.prontuario} e seu email institucional é ${this.email} e da aula de ${aula}.`);
+    }
+  };
+
+  const prof1 = new pessoa(`Milena `, `SL6789012`, `souza.m@ifsp.edu.br
+  `, `Geografia`);
+  prof1.apresentar();
+  const prof2 = new pessoa(`Ana Paula
+  `, `SL1234567
+  `, `paula.ana@ifsp.edu.br`, `Banco de Dados`);
+  prof2.apresentar();
+  const prof3 = new pessoa(`Luiz Roberto`, `SL4567891`, `roberto.l@ifsp.edu.br`, `Português`);
+  prof3.apresentar();
+
+  //----------------------------------
+
+
+  class ifciencia_oficina {
+    constructor (nome_palestrante, nome_oficina, oficina, horario_i, horario_f, data, num_sala, bloco){
+        this.nome_palestrante = nome_palestrante;
+        this.nome_oficina = nome_oficina
+        this.oficina = oficina
+        this.horario_i = horario_i
+        this.horario_f = horario_f
+        this.data = data
+        this.num_sala = num_sala
+        this.bloco = bloco
+    }
+    apresentar() {
+      console.log(`O nome do palestrante é ${this.nome_palestrante}, o nome da oficina é ${this.nome_oficina}, a oficina é sobre o tema ${this.oficina}, o horário inicial da oficina é ${this.horario_i}, o horário final da oficina é ${this.horario_f}, a data escolhida é ${this.data}, o numero da sala escolhido é ${this.num_sala} e o bloco é ${this.bloco}.`);
+    }
+  };
+
+  const oficina1 = new pessoa(`Dara Vieira
+  `, `Fundamentos Da Perícia`, `Perícia
+  `, `19:00`, `21:00`, `28/10/2023`, `110
+  `, `B`);
+  oficina1.apresentar();
+
+const oficina2 = new pessoa(`Maju Santana
+  `, `Aprendendo JavaScript`, `Programação
+  `, `13:00`, `16:00
+  `, `27/10/2023
+  `, `109
+
+  `, `D`);
+  oficina2.apresentar();
+
+  const oficina3 = new pessoa(`Lucas Braga
+  `, `Como Não Morrer De Fome`, `Culinária
+  `, `16:00
+  `, `18:00`, `26/10/2023
+  `, `106
+  `, `B`);
+  oficina3.apresentar();
