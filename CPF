@@ -1,0 +1,75 @@
+const prompt = require("prompt-sync")();
+
+const cpf = prompt("Digite o CPF (somente os 11 números): ");
+
+let soma = 0;
+for (let i = 0; i < 9; i++) {
+    soma = soma + (parseInt(cpf[i]) * (10 - i));
+}
+
+//-----------------------
+
+let resto = (soma * 10) % 11;
+
+if (resto === 10 || resto === 11) {
+    resto = 0;
+}
+if (resto !== parseInt(cpf[9])) {
+    console.log("CPF inválido.");
+    return;
+}
+
+//----------------------------
+
+soma = 0;
+for (let i = 0; i < 10; i++) {
+    soma = soma + (parseInt(cpf[i]) * (11 - i));
+}
+resto = (soma * 10) % 11;
+if (resto === 10 || resto === 11) {
+    resto = 0;
+}
+
+//---------------------------
+
+if (resto !== parseInt(cpf[10])) {
+    console.log("CPF inválido.");
+} else {
+    console.log("CPF válido.");
+}
+
+//______________________________________
+//______________________________________
+//______________________________________
+
+
+const prompt = require("prompt-sync")();
+const cpf = [5, 3, 4, 6, 6, 6, 1, 4, 8];
+let somacpf = 0;
+let somacpf2 = 0
+let d1 = 0;
+let d2 = 0;
+
+//--------------------------
+
+for (let x = 0; x < 9; x++) {
+    somacpf = somacpf + (cpf[x] * (10 - x));
+}
+ d1 = (somacpf * 10) % 11
+
+cpf.push(d1)
+
+console.log(cpf);
+
+//----------------------------
+
+for (let x = 0; x < 10; x++) {
+    somacpf2 = somacpf2 + (cpf[x] * (11 - x));
+}
+ d2 = (somacpf2 * 10) % 11
+
+console.log(somacpf2);
+console.log(d2);
+
+cpf.push(d2)
+console.log(cpf);
