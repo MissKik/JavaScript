@@ -1,0 +1,93 @@
+window.onload = function() {
+    var objTxtSigla = document.getElementById("sigla");
+    var objDivResultado = document.getElementById("resultado");
+    var objBotao = document.getElementById("botao");
+
+    objBotao.onclick = function() {
+        switch(objTxtSigla.value.toUpperCase()) {
+            case "AC":
+                objDivResultado.innerHTML = "Acre";
+                break;
+            case "AL":
+                objDivResultado.innerHTML = "Alagoas";
+                break;
+            case "AP":
+                objDivResultado.innerHTML = "Amapá";
+                break;
+            case "AM":
+                objDivResultado.innerHTML = "Amazonas";
+                break;
+            case "BA":
+                objDivResultado.innerHTML = "Bahia";
+                break;
+            case "CE":
+                objDivResultado.innerHTML = "Ceará";
+                break;
+            case "DF":
+                objDivResultado.innerHTML = "Distrito Federal";
+                break;
+            case "ES":
+                objDivResultado.innerHTML = "Espírito Santo";
+                break;
+            case "GO":
+                objDivResultado.innerHTML = "Goiás";
+                break;
+            case "MA":
+                objDivResultado.innerHTML = "Maranhão";
+                break;
+            case "MT":
+                objDivResultado.innerHTML = "Mato Grosso";
+                break;
+            case "MS":
+                objDivResultado.innerHTML = "Mato Grosso do Sul";
+                break;
+            case "MG":
+                objDivResultado.innerHTML = "Minas Gerais";
+                break;
+            case "PA":
+                objDivResultado.innerHTML = "Pará";
+                break;
+            case "PB":
+                objDivResultado.innerHTML = "Paraíba";
+                break;
+            case "PR":
+                objDivResultado.innerHTML = "Paraná";
+                break;
+            case "PE":
+                objDivResultado.innerHTML = "Pernambuco";
+                break;
+            case "PI":
+                objDivResultado.innerHTML = "Piauí";
+                break;
+            case "RJ":
+                objDivResultado.innerHTML = "Rio de Janeiro";
+                break;
+            case "RN":
+                objDivResultado.innerHTML = "Rio Grande do Norte";
+                break;
+            case "RS":
+                objDivResultado.innerHTML = "Rio Grande do Sul";
+                break;
+            case "RO":
+                objDivResultado.innerHTML = "Rondônia";
+                break;
+            case "RR":
+                objDivResultado.innerHTML = "Roraima";
+                break;
+            case "SC":
+                objDivResultado.innerHTML = "Santa Catarina";
+                break;
+            case "SP":
+                objDivResultado.innerHTML = "São Paulo";
+                break;
+            case "SE":
+                objDivResultado.innerHTML = "Sergipe";
+                break;
+            case "TO":
+                objDivResultado.innerHTML = "Tocantins";
+                break;
+            default:
+                objDivResultado.innerHTML = "Não é um estado válido";
+        }
+    }
+}
