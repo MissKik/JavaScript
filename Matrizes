@@ -1,0 +1,193 @@
+1) SOMA DOS VALORES
+
+const prompt = require("prompt-sync")();
+
+const matriz = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16]
+];
+
+let somaV = 0;
+
+for (let i = 0; i < matriz.length; i++) {
+  for (let j = 0; j < matriz[i].length; j++) {
+    somaV += matriz[i][j];
+  }
+}
+
+console.log("A soma dos valores na matriz é:", somaV);
+
+-----------------------------------------------
+
+2) DIGITE OS VALORES DA MATRIZ E ELE SOMA ESSES VALORES DEPOIS
+
+const prompt = require("prompt-sync")();
+
+const matriz = [];
+const linhas = 6;
+const colunas = 5;
+
+for (let i = 0; i < linhas; i++) {
+  const linha = [];
+  for (let j = 0; j < colunas; j++) {
+    const valor = parseFloat(prompt(`Digite o valor para a posição [${i}][${j}]: `));
+    linha.push(valor);
+  }
+  matriz.push(linha);
+}
+
+let somaV = 0;
+
+for (let i = 0; i < matriz.length; i++) {
+  for (let j = 0; j < matriz[i].length; j++) {
+    somaV += matriz[i][j];
+  }
+}
+
+console.log("A soma dos valores na matriz é:", somaV);
+
+----------------------------------------------------
+
+3) SOMA DAS LINHAS PARES
+
+const prompt = require("prompt-sync")();
+
+const matriz = [];
+const linhas = 2;
+const colunas = 2;
+
+for (let i = 0; i < linhas; i++) {
+  const linha = [];
+  for (let j = 0; j < colunas; j++) {
+    const valor = parseFloat(prompt(`Digite o valor para a posição [${i}][${j}]: `));
+    linha.push(valor);
+  }
+  matriz.push(linha);
+}
+
+let somaV = 0;
+
+// Somando apenas os valores das linhas pares
+for (let i = 0; i < matriz.length; i += 2) {
+  for (let j = 0; j < matriz[i].length; j++) {
+    somaV += matriz[i][j];
+  }
+}
+
+console.log("A soma dos valores das linhas pares na matriz é:", somaV);
+
+--------------------------------------------------
+
+4) SOMA DOS VALORES A DIAGONAL
+
+const prompt = require("prompt-sync")();
+
+const matriz = [];
+const linhas = 5;
+const colunas = 5;
+
+for (let i = 0; i < linhas; i++) {
+  const linha = [];
+  for (let j = 0; j < colunas; j++) {
+    const valor = parseFloat(prompt(`Digite o valor para a posição [${i}][${j}]: `));
+    linha.push(valor);
+  }
+  matriz.push(linha);
+}
+
+let somaDiagonal = 0;
+
+// Somando os valores na diagonal
+for (let i = 0; i < matriz.length; i++) {
+  somaDiagonal += matriz[i][i];
+}
+
+console.log("A soma dos valores na diagonal da matriz é:", somaDiagonal);
+
+-------------------------------------------------
+
+5) MATRIZES
+
+const prompt = require("prompt-sync")();
+
+const matriz = [
+    ['Ana', 'Lívia', 'Matheus'],
+    ['Maria', 'Victória', 'Laise'],
+    ['Gabriel', 'Victor', 'João'],
+    ['Nara', 'Dara', 'Ravi']
+];
+
+
+console.log("Os alunos que estão na matriz são: ", matriz)
+
+console.log("---------------------------------------------")
+
+const matrizA = matriz.flatMap(row => row).sort();
+
+console.log("Os alunos em ordem alfabética são:");
+console.log(matrizA.join(', '));
+
+console.log("---------------------------------------------")
+
+const encontrarMaiorEMenorNome = (matriz) => {
+    let maiorNome = "";
+    let menorNome = matriz[0][0];
+
+    matriz.forEach(row => {
+        row.forEach(nome => {
+            if (nome.length > maiorNome.length) {
+                maiorNome = nome;
+            }
+            if (nome.length < menorNome.length) {
+                menorNome = nome;
+            }
+        });
+    });
+
+    return { maior: maiorNome, menor: menorNome };
+};
+
+console.log("---------------------------------------------")
+
+
+console.log("Tamanho de cada palavra na matriz:");
+matriz.forEach(row => {
+    row.forEach(nome => {
+        console.log(`${nome}: ${nome.length} caracteres`);
+    });
+});
+
+const { maior, menor } = encontrarMaiorEMenorNome(matriz);
+
+console.log("O aluno com o nome mais longo (por número de caracteres) é:", maior);
+console.log("O aluno com o nome mais curto (por número de caracteres) é:", menor);
+
+-----------------------------------------------------------------------
+6) NOME MAIS LONGO
+
+const maiorNome = (matriz) => {
+    let maiorNome = "";
+
+    matriz.forEach(row => { //usei o for.Each para passar pelos elementos da matriz sem precisar usar o "for"
+        row.forEach(nome => { //row é uma linha, ele serve para que separe os elementos da matriz em uma única linha
+            if (nome.length > maiorNome.length) {
+                maiorNome = nome;
+            }
+        });
+    });
+
+    return {maior: maiorNome};
+};
+
+console.log("Tamanho de cada palavra na matriz:");
+matriz.forEach(row => { //ele vai separar novamente a matriz em uma linha e pegar seus elementos para assim separar o numero de caracteres de cada nome, usando o .length
+    row.forEach(nome => {
+        console.log(`${nome}: ${nome.length} caracteres`);
+    });
+});
+
+const {maior} = maiorNome(matriz);
+
+console.log("O aluno com o nome mais longo (por número de caracteres) é:", maior);
