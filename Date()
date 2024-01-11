@@ -1,0 +1,18 @@
+/* const hoje = new Date() */
+/*instanciei um objeto*/
+
+/* get date (extrai o dia de hoje) */
+/* amanha.setDate(dia + 1) (vai pegar o dia de hoje e somar mais um) */
+
+const prompt = require("prompt-sync")();
+
+const hoje = new Date()
+const amanha = new Date() //objeto que recebe a data
+
+const dia = amanha.getDate() //extrair o dia da data
+amanha.setDate(dia + 1)
+console.log(`Hoje: ${hoje} Amanhã: ${amanha}`)
+
+//getDate
+//getMounth (mês)
+//getFullYear (proximo ano)
