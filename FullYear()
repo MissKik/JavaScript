@@ -1,0 +1,18 @@
+/* const hoje = new Date() */
+/*instanciei um objeto*/
+
+/* get date (extrai o dia de hoje) */
+/* amanha.setDate(dia + 1) (vai pegar o dia de hoje e somar mais um) */
+
+const prompt = require("prompt-sync")();
+
+const hoje = new Date()
+const anoVem = new Date() //objeto que recebe a data
+
+const dia = anoVem.getFullYear() //extrair o dia da data
+anoVem.setFullYear(dia + 1)
+console.log(`Hoje: ${hoje} Ano Que Vem: ${anoVem}`)
+
+//getDate
+//getMounth (mês)
+//getFullYear (proximo ano)
