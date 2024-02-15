@@ -1,0 +1,32 @@
+const readline = require('readline-sync'); //criando pacote para receber dados (entrada)
+
+nome = readline.question("Digite o seu nome: ");
+idade = readline.questionInt("Digite sua idade: ");
+
+console.log(nome+" tem "+ idade+" anos"); //comando para aparecer na tela, sem ser nenhuma pergunta
+
+_______________________________________________________________________
+
+
+// mude o programa para calcular IMC e verifique 
+// IMC menor que (>) 20 Magro
+// IMC menor ou igual a 25 Legal
+// IMC maior que 25 (<) Gordo
+// IMC = peso / altura ao quadrado
+
+const readline = require('readline-sync'); //criando pacote para receber dados (entrada)
+
+console.log("Calculo de IMC")
+nome = readline.question("Digite o seu nome: ");
+peso = readline.questionInt("Digite seu peso: ");
+altura = readline.question("Digite o sua altura: ");
+
+IMC = peso/altura*altura
+
+if (IMC > 20){
+    console.log("Você está magro e seu IMC é "+IMC)
+} else if (IMC >= 25){
+    console.log("Você está legal e seu IMC é "+IMC)
+} else {
+    console.log("Você está gordo e seu IMC é "+IMC)
+}
