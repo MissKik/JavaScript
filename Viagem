@@ -1,0 +1,24 @@
+//entrada
+// processamento
+//saida
+
+//leia (tempoM)
+//leia (velocidade media)
+//converter horas por minutos = tempoH = tempoM / 60
+//60.0 = real
+//60 = inteiro
+//espaço = velocidademedia * tempoH
+//consumo = espaço / 11.52 (km por litro que está no enunciado)
+
+const prompt = require("prompt-sync")();
+
+let tempoM = Number(prompt("Digite o tempo em minutos que você dirigiu: "))
+let vM = Number(prompt("Digite a velocidade média que você dirigiu durante a viagem (KM/H): "))
+
+let tempoH = tempoM / 60.0
+let espaco = vM * tempoH
+let consumo = espaco / 11.52
+
+console.log("O tempo em HORAS é:" +tempoH)
+console.log("o ESPAÇO que você percorreu é (KM): "+espaco)
+console.log("O CONSUMO dos litros que você gastou nessa viagem foi de: "+consumo)
