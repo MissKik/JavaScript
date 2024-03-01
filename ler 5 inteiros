@@ -1,0 +1,60 @@
+const prompt = require("prompt-sync")();
+
+// Array (coleção) para armazenar os números
+let N = [];
+
+// Loop para ler os 5 inteiros
+for (let i = 0; i < 5; i++) {
+    let n = parseInt(prompt(`Digite o ${i+1}º número:`));
+    N.push(n);
+}
+
+// Encontrar o maior número
+let maior = N[0];
+for (let i = 1; i < N.length; i++) { // é uma propriedade somente leitura, o que significa que não podemos atribuir um novo valor a ele
+    if (N[i] > maior) {
+        maior = N[i];
+    }
+}
+
+// Encontrar o menor número
+let menor = N[0];
+for (let i = 1; i < N.length; i++) {
+    if (N[i] < menor) {
+        menor = N[i];
+    }
+}
+
+// Calcular a média
+let soma = 0;
+for (let i = 0; i < N.length; i++) {
+    soma += N[i];
+}
+let media = soma / N.length;
+
+// Calcular a média ponderada com pesos crescentes
+const pesos = [1, 2, 3, 4, 5];
+let sProd = 0;
+for (let i = 0; i < N.length; i++) {
+    sProd += N[i] * pesos[i];
+}
+let somaPesos = 0;
+for (let i = 0; i < pesos.length; i++) {
+    somaPesos += pesos[i];
+}
+let meP = sProd / somaPesos;
+
+// Encontrar os valores maiores que a média ponderada
+let mMP = [];
+for (let i = 0; i < N.length; i++) {
+    if (N[i] > meP) {
+        mMP.push(N[i]);
+    }
+}
+
+// Imprimir os resultados
+console.log("Maior número:", maior);
+console.log("Menor número:", menor);
+console.log("Média:", media);
+console.log("Média ponderada com pesos crescentes:", meP);
+console.log("Valores maiores que a média ponderada:", mMP);
